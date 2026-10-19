@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/layout :: head}"></head>
+
+<body>
+
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div th:replace="~{fragments/layout :: sidebar}"></div>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div th:replace="~{fragments/layout :: navbar}"></div>
+
+        <!-- Main Content -->
+        <div class="container-fluid px-4 py-4">
+            <h2 class="mb-4">Dashboard</h2>
+
+            <!-- Stats Cards Layout Grid -->
+            <div class="row g-4 mb-4" th:if="${dashboardStats != null}">
+                <div class="col-md-3">
+                    <div class="card bg-primary text-white h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-title mb-0 opacity-75">Total Students</h6>
+                                    <h2 class="my-2 fw-bold" th:text="${dashboardStats.totalStudents != null ? dashboardStats.totalStudents : 0}">0</h2>
+                                </div>
+                                <i class="bi bi-people fs-1 opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-success text-white h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-title mb-0 opacity-75">Total Courses</h6>
+                                    <h2 class="my-2 fw-bold" th:text="${dashboardStats.totalCourses != null ? dashboardStats.totalCourses : 0}">0</h2>
+                                </div>
+                                <i class="bi bi-book fs-1 opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-info text-dark h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-title mb-0 opacity-75">Top Course</h6>
+                                    <h2 class="my-2 fw-bold fs-4 text-truncate" style="max-width: 180px;" th:text="${dashboardStats.topPerformingCourse != null ? dashboardStats.topPerformingCourse : 'N/A'}" th:title="${dashboardStats.topPerformingCourse}">N/A</h2>
+                                </div>
+                                <i class="bi bi-trophy fs-1 opacity-25"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-secondary text-white h-100 shadow-sm border-0">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="card-title mb-0 opacity-75">Enrolled This Month</h6>
+                                    <h2 class="my-2 fw-bold" th:text="${dashboardStats.studentsEnrolledThisMonth != null ? dashboardStats.studentsEnrolledThisMonth : 0}">0</h2>
+                                </div>
+                                <i class="bi bi-person-check fs-1 opacity-50"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Activity Table Component -->
+            <div class="card mb-4 border-0 shadow-sm">
+                <div class="card-header bg-white py-3 border-bottom-0">
+                    <i class="bi bi-table me-1 text-primary"></i>
+                    <span class="fw-semibold">Recent Student Registrations</span>
+                </div>
+                <div class="card-body pt-0">
+
+                    <!-- FIXED: Dynamic safe list state layout wrapper and corrected typography metrics text warning -->
+                    <div class="text-muted text-center py-4" th:if="${students == null || students.isEmpty()}">
+                        <i class="bi bi-folder-x fs-2 d-block mb-2 text-opacity-25"></i>
+                        No recent student registrations found.
+                    </div>
+
+                    <div class="table-responsive" th:if="${students != null && !students.isEmpty()}">
+                        <table class="table table-hover align-middle mb-0">
+                            <thead class="table-light">
+                            <tr>
+                                <th>#</th>
+                                <th>Student Name</th>
+                                <th>Email</th>
+                                <th class="text-center">Courses Count</th>
+                                <th class="text-end">Total Fee</th>
+                                <th class="text-end">Actions</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <!-- FIXED: Programmatic iteration tracking loops -->
+                            <tr th:each="student, iter : ${students}">
+                                <td th:text="${iter.count}"></td>
+                                <td class="fw-semibold" th:text="${student.studentName}"></td>
+                                <td th:text="${student.email}"></td>
+                                <td class="text-center"><span class="badge bg-light text-dark border" th:text="${student.courseCount}">0</span></td>
+                                <!-- FIXED: Decimal notation configurations for fee summary outputs -->
+                                <td class="text-end fw-semibold text-primary" th:text="${'Rs.' + #numbers.formatDecimal(student.totalFee != null ? student.totalFee : 0, 1, 'COMMA', 2, 'POINT')}">Rs.0.00</td>
+                                <td class="text-end">
+                                    <a th:href="@{/enrollments/getStudentEnrollmentDetails/{id}(id=${student.studentId}, source='dashboard')}" class="btn btn-sm btn-outline-info" title="View Details">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer component layout -->
+        <footer class="py-3 bg-light mt-auto border-top">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center justify-content-between small text-muted">
+                    <div>Copyright &copy; Student Management System 2026</div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+<div th:replace="~{fragments/layout :: scripts}"></div>
+</body>
+</html>

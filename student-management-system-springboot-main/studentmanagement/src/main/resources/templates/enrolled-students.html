@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/layout :: head}"></head>
+
+<body>
+<div class="d-flex" id="wrapper">
+
+    <!-- Sidebar -->
+    <div th:replace="~{fragments/layout :: sidebar}"></div>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+        <!-- Navbar -->
+        <div th:replace="~{fragments/layout :: navbar}"></div>
+
+        <div class="container-fluid px-4 py-4">
+
+            <!-- Page Header -->
+            <div class="bg-primary text-white rounded-3 p-4 mb-4">
+                <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3">
+
+                    <div>
+                        <h2 class="mb-1">Students Enrolled in Courses</h2>
+                        <p class="mb-0 opacity-75">
+                            Track enrollment coverage, fees, and quick access to details.
+                        </p>
+                    </div>
+
+                    <a th:href="@{/enrollments/showEnroll}"
+                       class="btn btn-light text-primary fw-semibold">
+                        <i class="bi bi-plus-lg me-1"></i>
+                        Enroll Student
+                    </a>
+
+                </div>
+            </div>
+
+            <!-- Success Message -->
+            <div th:if="${message}"
+                 class="alert alert-success text-center"
+                 role="alert"
+                 th:text="${message}">
+            </div>
+
+            <!-- Enrolled Students Card -->
+            <div class="card mb-4">
+
+                <div class="card-header bg-white">
+                    <i class="bi bi-table me-1"></i>
+                    Enrolled Students
+                </div>
+
+                <div class="card-body">
+
+                    <!-- FIXED: Added safe null check using safe navigation operator to prevent NullPointerException -->
+                    <div class="text-muted"
+                         th:if="${students == null || students.content == null || students.content.isEmpty()}">
+                        No enrolled students found.
+                    </div>
+
+                    <!-- FIXED: Secure validation before trying to access the content list -->
+                    <div class="table-responsive"
+                         th:if="${students != null && students.content != null && !students.content.isEmpty()}">
+
+                        <table class="table table-hover table-striped align-middle">
+
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Student Name</th>
+                                <th>Email</th>
+                                <th>Courses Count</th>
+                                <th>Total Fee</th>
+                                <th>Actions</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr th:each="student, iterStat : ${students.content}">
+
+                                <td th:text="${students.number * students.size + iterStat.count}">
+                                </td>
+
+                                <td th:text="${student.studentName}"></td>
+
+                                <td th:text="${student.email}"></td>
+
+                                <td th:text="${student.courseCount}"></td>
+
+                                <!-- FIXED: Formatted the raw numeric value to correct currency layout with 2 decimal points -->
+                                <td th:text="${'Rs.' + #numbers.formatDecimal(student.totalFee != null ? student.totalFee : 0, 1, 'COMMA', 2, 'POINT')}"></td>
+
+                                <td>
+                                    <a th:href="@{/enrollments/getStudentEnrollmentDetails/{id}(id=${student.studentId}, source='enrollments')}"
+                                       class="btn btn-sm btn-info text-white"
+                                       title="View Enrollment Details">
+                                        <i class="bi bi-eye"></i>
+                                    </a>
+                                </td>
+
+                            </tr>
+                            </tbody>
+
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <nav aria-label="Enrolled students pagination"
+                         th:if="${students != null && students.totalPages > 0}">
+
+                        <ul class="pagination justify-content-end">
+
+                            <!-- Previous -->
+                            <li class="page-item"
+                                th:classappend="${students.first} ? 'disabled' : ''">
+
+                                <a class="page-link"
+                                   th:href="@{/enrollments/enrollmentList(page=${students.number - 1}, size=${students.size})}">
+                                    Previous
+                                </a>
+                            </li>
+
+                            <!-- Page Numbers -->
+                            <li class="page-item"
+                                th:each="pageNum : ${#numbers.sequence(0, students.totalPages - 1)}"
+                                th:classappend="${pageNum == students.number} ? 'active' : ''">
+
+                                <a class="page-link"
+                                   th:href="@{/enrollments/enrollmentList(page=${pageNum}, size=${students.size})}"
+                                   th:text="${pageNum + 1}">
+                                </a>
+                            </li>
+
+                            <!-- Next -->
+                            <li class="page-item"
+                                th:classappend="${students.last} ? 'disabled' : ''">
+
+                                <a class="page-link"
+                                   th:href="@{/enrollments/enrollmentList(page=${students.number + 1}, size=${students.size})}">
+                                    Next
+                                </a>
+                            </li>
+
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<div th:replace="~{fragments/layout :: scripts}"></div>
+
+</body>
+</html>

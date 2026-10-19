@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/layout :: head}"></head>
+
+<body>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div th:replace="~{fragments/layout :: sidebar}"></div>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div th:replace="~{fragments/layout :: navbar}"></div>
+
+        <div class="container-fluid px-4 py-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2>Course Details</h2>
+                <a th:href="@{/course/list}" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left me-1"></i> Back to List
+                </a>
+            </div>
+
+            <!-- FIXED: Added an outer wrapper container check to verify if the course model exists -->
+            <div class="card mb-4" th:if="${course != null}">
+                <div class="card-header bg-white">
+                    <i class="bi bi-info-circle me-1"></i> Information
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Course Name:</div>
+                        <div class="col-md-9" th:text="${course.courseName}"></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Course Code:</div>
+                        <div class="col-md-9" th:text="${course.courseCode}"></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Course Fee:</div>
+                        <!-- FIXED: Formatted decimal notation cleanly for pricing aesthetics -->
+                        <div class="col-md-9" th:text="${'Rs.' + #numbers.formatDecimal(course.fee != null ? course.fee : 0, 1, 'COMMA', 2, 'POINT')}"></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Duration:</div>
+                        <div class="col-md-9" th:text="${course.duration}"></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Is Active:</div>
+                        <div class="col-md-9" th:text="${course.active} ? 'Yes' : 'No'"></div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-3 fw-bold">Description:</div>
+                        <div class="col-md-9">
+                            <p th:text="${course.description != null && !course.description.isEmpty()} ? ${course.description} : 'No description available.'"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-footer bg-white">
+                    <!-- FIXED: Converted to proper Thymeleaf path variable notation which is safe from unexpected layout breaks -->
+                    <a th:href="@{/course/{id}/edit(id=${course.id})}" class="btn btn-warning text-white">
+                        <i class="bi bi-pencil me-1"></i> Edit Course
+                    </a>
+                </div>
+            </div>
+
+
+            <div class="alert alert-danger text-center" role="alert" th:unless="${course != null}">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i> Error: Course metrics could not be loaded or the course record does not exist.
+            </div>
+
+        </div>
+    </div>
+</div>
+<div th:replace="~{fragments/layout :: scripts}"></div>
+</body>
+
+</html>

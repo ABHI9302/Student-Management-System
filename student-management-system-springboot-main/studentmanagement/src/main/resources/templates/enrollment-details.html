@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/layout :: head}"></head>
+
+<body>
+<div class="d-flex" id="wrapper">
+    <!-- Sidebar -->
+    <div th:replace="~{fragments/layout :: sidebar}"></div>
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+        <div th:replace="~{fragments/layout :: navbar}"></div>
+
+        <div class="container-fluid px-4 py-4">
+
+            <!-- Page Header -->
+            <div class="bg-primary text-white rounded-3 p-4 mb-4">
+                <div class="d-flex flex-column flex-md-row align-items-start align-items-md-center justify-content-between gap-3">
+                    <div>
+                        <h2 class="mb-1">Enrollment Details</h2>
+                        <p class="mb-0 opacity-75">Overview of courses, fees, and student information.</p>
+                    </div>
+
+                    <!-- FIXED: Removed th:text from anchor tag and handled dynamic text inside inline tag so back icon stays visible -->
+                    <a th:href="${source == 'dashboard'} ? @{/dashboard} : @{/enrollments/enrollmentList}"
+                       class="btn btn-light text-primary fw-semibold">
+                        <i class="bi bi-arrow-left me-1"></i>
+                        <span th:text="${source == 'dashboard'} ? 'Back to Dashboard' : 'Back to Enrolled Students'"></span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- FIXED: Top-level safe check added to check if data object exists from backend -->
+            <div class="row g-4" th:if="${enrollmentSummaryDTO != null}">
+
+                <!-- Section 1 & 3: Student info and summary -->
+                <div class="col-lg-4">
+                    <div class="card h-100 mb-3 mb-lg-4">
+                        <div class="card-header bg-white">
+                            <i class="bi bi-person-badge me-1"></i> Student Information
+                        </div>
+                        <div class="card-body">
+                            <p class="mb-2"><strong>Name:</strong> <span th:text="${enrollmentSummaryDTO.studentName}"></span></p>
+                            <p class="mb-2"><strong>Email:</strong> <span th:text="${enrollmentSummaryDTO.email}"></span></p>
+                            <div class="p-3 bg-light border rounded">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Total Courses</span>
+                                    <strong th:text="${enrollmentSummaryDTO.courseCount}">0</strong>
+                                </div>
+                                <div class="d-flex justify-content-between">
+                                    <span>Total Fee</span>
+                                    <!-- FIXED: Standard decimal formatting for currency display -->
+                                    <strong class="text-primary" th:text="${'Rs.' + #numbers.formatDecimal(enrollmentSummaryDTO.totalFee != null ? enrollmentSummaryDTO.totalFee : 0, 1, 'COMMA', 2, 'POINT')}">Rs.0.00</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 2: Courses table -->
+                <div class="col-lg-8">
+                    <div class="card h-100">
+                        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+                            <span><i class="bi bi-journal-check me-1"></i> Enrolled Courses</span>
+                        </div>
+                        <div class="card-body">
+
+                            <!-- Empty State for Courses list -->
+                            <div class="text-muted p-3 text-center" th:if="${enrollmentSummaryDTO.courseList == null || enrollmentSummaryDTO.courseList.isEmpty()}">
+                                <i class="bi bi-exclamation-circle me-1"></i> No active course enrollments found for this student.
+                            </div>
+
+                            <!-- Courses Table Layout -->
+                            <div class="table-responsive" th:if="${enrollmentSummaryDTO.courseList != null && !enrollmentSummaryDTO.courseList.isEmpty()}">
+                                <table class="table table-hover align-middle">
+                                    <thead>
+                                    <tr>
+                                        <th>Course Name</th>
+                                        <th>Description</th>
+                                        <th class="text-end">Fee</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="course : ${enrollmentSummaryDTO.courseList}">
+                                        <td data-label="Course Name" class="fw-semibold" th:text="${course.courseName}"></td>
+                                        <td data-label="Description" class="text-muted" th:text="${course.description}"></td>
+                                        <!-- FIXED: Added elegant decimal layout configuration for individual row fee metrics -->
+                                        <td data-label="Fee" class="text-end" th:text="${'Rs.' + #numbers.formatDecimal(course.fee != null ? course.fee : 0, 1, 'COMMA', 2, 'POINT')}"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Global Error Catch View if Object is missing completely -->
+            <div class="alert alert-warning text-center" role="alert" th:unless="${enrollmentSummaryDTO != null}">
+                <i class="bi bi-exclamation-triangle-fill me-2"></i> Error: Unable to fetch enrollment details. Please try again.
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div th:replace="~{fragments/layout :: scripts}"></div>
+</body>
+</html>

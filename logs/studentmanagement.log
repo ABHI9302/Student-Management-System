@@ -1,0 +1,287 @@
+2026-10-19 14:27:11 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-10-19 14:27:11 INFO  [main] c.c.s.StudentmanagementApplication - Starting StudentmanagementApplication using Java 26.0.2 with PID 10608 (C:\Users\DELL\Downloads\student-management-system-springboot-fixed\student-management-system-springboot-main\studentmanagement\target\classes started by DELL in C:\Users\DELL\Downloads\student-management-system-springboot-fixed)
+2026-10-19 14:27:11 INFO  [main] c.c.s.StudentmanagementApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-19 14:27:14 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-19 14:27:14 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 157 ms. Found 4 JPA repository interfaces.
+2026-10-19 14:27:15 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-10-19 14:27:15 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-10-19 14:27:15 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-19 14:27:15 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-10-19 14:27:15 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-19 14:27:15 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3867 ms
+2026-10-19 14:27:16 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-19 14:27:16 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-10-19 14:27:16 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-19 14:27:17 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-19 14:27:17 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-19 14:27:17 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@531a716c
+2026-10-19 14:27:17 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-19 14:27:18 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.46
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-19 14:27:19 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-19 14:27:19 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-19 14:27:20 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-19 14:27:21 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-19 14:27:21 INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userServiceImpl
+2026-10-19 14:27:22 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-10-19 14:27:22 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-10-19 14:27:22 INFO  [main] c.c.s.StudentmanagementApplication - Started StudentmanagementApplication in 12.176 seconds (process running for 13.478)
+2026-10-19 14:27:46 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-19 14:27:46 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-19 14:27:46 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2026-10-19 14:27:52 INFO  [http-nio-8080-exec-5] c.c.s.controller.DashboardController - Processing GET /dashboard - loading landing metrics view overview.
+2026-10-19 14:27:52 INFO  [http-nio-8080-exec-5] c.c.s.s.impl.DashboardServiceImpl - Compiling central dashboard analytics statistics.
+2026-10-19 14:27:52 INFO  [http-nio-8080-exec-5] c.c.s.s.impl.DashboardServiceImpl - Querying database to resolve the highest registered course title.
+2026-10-19 14:27:52 INFO  [http-nio-8080-exec-5] c.c.s.s.impl.EnrollmentServiceImpl - Fetching top 5 recently enrolled students for dashboard.
+2026-10-19 14:27:52 WARN  [http-nio-8080-exec-5] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 14:28:02 INFO  [http-nio-8080-exec-7] c.c.s.controller.StudentController - Get /students/list - showing paginated student catalog list.
+2026-10-19 14:28:02 INFO  [http-nio-8080-exec-7] c.c.s.s.impl.StudentServiceImpl - Fetching paginated active students catalog from index: 0
+2026-10-19 14:28:05 INFO  [http-nio-8080-exec-9] c.c.s.controller.CourseController - Get /course/list - showing course list page.
+2026-10-19 14:28:05 INFO  [http-nio-8080-exec-9] c.c.s.service.impl.CourseServiceImpl - Fetching paginated active courses list from page index: 0
+2026-10-19 14:28:08 INFO  [http-nio-8080-exec-1] c.c.s.controller.CourseController - Get /course/new - showing create course page.
+2026-10-19 14:28:33 INFO  [http-nio-8080-exec-3] c.c.s.controller.CourseController - Post /course - create course request received.
+2026-10-19 14:28:33 INFO  [http-nio-8080-exec-3] c.c.s.service.impl.CourseServiceImpl - Checking if code exists: java01
+2026-10-19 14:28:33 ERROR [http-nio-8080-exec-3] c.c.s.controller.CourseController - Post /course - Code must be unique.
+2026-10-19 14:28:43 INFO  [http-nio-8080-exec-5] c.c.s.controller.CourseController - Post /course - create course request received.
+2026-10-19 14:28:43 INFO  [http-nio-8080-exec-5] c.c.s.service.impl.CourseServiceImpl - Checking if code exists: java001
+2026-10-19 14:28:43 INFO  [http-nio-8080-exec-5] c.c.s.service.impl.CourseServiceImpl - Creating course with code: java001
+2026-10-19 14:28:43 INFO  [http-nio-8080-exec-5] c.c.s.controller.CourseController - Post /course - create course successfully created.
+2026-10-19 14:28:43 INFO  [http-nio-8080-exec-6] c.c.s.controller.CourseController - Get /course/list - showing course list page.
+2026-10-19 14:28:43 INFO  [http-nio-8080-exec-6] c.c.s.service.impl.CourseServiceImpl - Fetching paginated active courses list from page index: 0
+2026-10-19 14:28:53 INFO  [http-nio-8080-exec-9] c.c.s.service.impl.CourseServiceImpl - Fetching course details for ID: 5
+2026-10-19 14:28:57 INFO  [http-nio-8080-exec-1] c.c.s.controller.CourseController - Get /course/list - showing course list page.
+2026-10-19 14:28:57 INFO  [http-nio-8080-exec-1] c.c.s.service.impl.CourseServiceImpl - Fetching paginated active courses list from page index: 0
+2026-10-19 14:28:59 INFO  [http-nio-8080-exec-3] c.c.s.service.impl.CourseServiceImpl - Fetching course details for ID: 5
+2026-10-19 14:29:16 INFO  [http-nio-8080-exec-5] c.c.s.controller.StudentController - Get /students/list - showing paginated student catalog list.
+2026-10-19 14:29:16 INFO  [http-nio-8080-exec-5] c.c.s.s.impl.StudentServiceImpl - Fetching paginated active students catalog from index: 0
+2026-10-19 14:29:20 INFO  [http-nio-8080-exec-7] c.c.s.c.EnrollmentController - Get /enrollmentList - showing enrolled student list page
+2026-10-19 14:29:20 INFO  [http-nio-8080-exec-7] c.c.s.s.impl.EnrollmentServiceImpl - Fetching enrolled summary overview records for page index: 0
+2026-10-19 14:29:20 WARN  [http-nio-8080-exec-7] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 14:29:25 INFO  [http-nio-8080-exec-9] c.c.s.c.EnrollmentController - Get /enrollments/showEnroll - showing enrollment page.
+2026-10-19 14:29:25 INFO  [http-nio-8080-exec-9] c.c.s.service.impl.CourseServiceImpl - Fetching all active courses sorted by courseName for dropdown inputs.
+2026-10-19 14:29:25 INFO  [http-nio-8080-exec-9] c.c.s.s.impl.StudentServiceImpl - Fetching raw active student records list for selection dropdown forms.
+2026-10-19 14:29:36 INFO  [http-nio-8080-exec-1] c.c.s.c.EnrollmentController - Post /enrollments/enrollCourse - enrollment request received.
+2026-10-19 14:29:36 INFO  [http-nio-8080-exec-1] c.c.s.s.impl.EnrollmentServiceImpl - Processing multiple course enrollment request for Student ID: 2
+2026-10-19 14:29:36 INFO  [http-nio-8080-exec-1] c.c.s.c.EnrollmentController - Post /enrollments/enrollCourse - Enrollment successfully.
+2026-10-19 14:29:36 INFO  [http-nio-8080-exec-2] c.c.s.c.EnrollmentController - Get /enrollmentList - showing enrolled student list page
+2026-10-19 14:29:36 INFO  [http-nio-8080-exec-2] c.c.s.s.impl.EnrollmentServiceImpl - Fetching enrolled summary overview records for page index: 0
+2026-10-19 14:29:36 WARN  [http-nio-8080-exec-2] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 14:29:41 INFO  [http-nio-8080-exec-4] c.c.s.controller.DashboardController - Processing GET /dashboard - loading landing metrics view overview.
+2026-10-19 14:29:41 INFO  [http-nio-8080-exec-4] c.c.s.s.impl.DashboardServiceImpl - Compiling central dashboard analytics statistics.
+2026-10-19 14:29:41 INFO  [http-nio-8080-exec-4] c.c.s.s.impl.DashboardServiceImpl - Querying database to resolve the highest registered course title.
+2026-10-19 14:29:41 INFO  [http-nio-8080-exec-4] c.c.s.s.impl.EnrollmentServiceImpl - Fetching top 5 recently enrolled students for dashboard.
+2026-10-19 14:29:41 WARN  [http-nio-8080-exec-4] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 14:30:04 INFO  [http-nio-8080-exec-7] c.c.s.controller.CourseController - Get /course/list - showing course list page.
+2026-10-19 14:30:04 INFO  [http-nio-8080-exec-7] c.c.s.service.impl.CourseServiceImpl - Fetching paginated active courses list from page index: 0
+2026-10-19 14:30:09 INFO  [http-nio-8080-exec-9] c.c.s.controller.StudentController - Get /students/list - showing paginated student catalog list.
+2026-10-19 14:30:09 INFO  [http-nio-8080-exec-9] c.c.s.s.impl.StudentServiceImpl - Fetching paginated active students catalog from index: 0
+2026-10-19 14:30:12 INFO  [http-nio-8080-exec-1] c.c.s.c.EnrollmentController - Get /enrollmentList - showing enrolled student list page
+2026-10-19 14:30:12 INFO  [http-nio-8080-exec-1] c.c.s.s.impl.EnrollmentServiceImpl - Fetching enrolled summary overview records for page index: 0
+2026-10-19 14:30:12 WARN  [http-nio-8080-exec-1] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 14:30:14 INFO  [http-nio-8080-exec-3] c.c.s.c.EnrollmentController - Get /enrollments/showEnroll - showing enrollment page.
+2026-10-19 14:30:14 INFO  [http-nio-8080-exec-3] c.c.s.service.impl.CourseServiceImpl - Fetching all active courses sorted by courseName for dropdown inputs.
+2026-10-19 14:30:14 INFO  [http-nio-8080-exec-3] c.c.s.s.impl.StudentServiceImpl - Fetching raw active student records list for selection dropdown forms.
+2026-10-19 14:34:46 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-19 14:34:46 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-19 14:34:46 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-19 14:34:46 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-19 14:34:46 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-19 16:03:20 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-10-19 16:03:20 INFO  [main] c.c.s.StudentmanagementApplication - Starting StudentmanagementApplication using Java 26.0.2 with PID 14100 (C:\Users\DELL\Downloads\student-management-system-springboot-fixed\student-management-system-springboot-main\studentmanagement\target\classes started by DELL in C:\Users\DELL\Downloads\student-management-system-springboot-fixed)
+2026-10-19 16:03:20 INFO  [main] c.c.s.StudentmanagementApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-19 16:03:22 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-19 16:03:22 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 148 ms. Found 4 JPA repository interfaces.
+2026-10-19 16:03:23 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-10-19 16:03:23 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-10-19 16:03:23 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-19 16:03:23 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-10-19 16:03:23 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-19 16:03:23 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2726 ms
+2026-10-19 16:03:23 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-19 16:03:23 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-10-19 16:03:23 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-19 16:03:24 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-19 16:03:24 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-19 16:03:24 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@278de2b2
+2026-10-19 16:03:24 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-19 16:03:24 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.46
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-19 16:03:27 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-19 16:03:28 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-19 16:03:30 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-19 16:03:32 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-19 16:03:32 INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userServiceImpl
+2026-10-19 16:03:33 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-10-19 16:03:33 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-10-19 16:03:33 INFO  [main] c.c.s.StudentmanagementApplication - Started StudentmanagementApplication in 13.864 seconds (process running for 14.973)
+2026-10-19 16:03:41 INFO  [http-nio-8080-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-19 16:03:41 INFO  [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-19 16:03:41 INFO  [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-10-19 16:03:44 INFO  [http-nio-8080-exec-6] c.c.s.controller.DashboardController - Processing GET /dashboard - loading landing metrics view overview.
+2026-10-19 16:03:44 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.DashboardServiceImpl - Compiling central dashboard analytics statistics.
+2026-10-19 16:03:44 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.DashboardServiceImpl - Querying database to resolve the highest registered course title.
+2026-10-19 16:03:44 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.EnrollmentServiceImpl - Fetching top 5 recently enrolled students for dashboard.
+2026-10-19 16:03:44 WARN  [http-nio-8080-exec-6] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 16:03:55 INFO  [http-nio-8080-exec-7] c.c.s.s.impl.EnrollmentServiceImpl - Compiling detailed relational records tree for Student ID: 2
+2026-10-19 16:04:06 INFO  [http-nio-8080-exec-9] c.c.s.c.EnrollmentController - Get /enrollmentList - showing enrolled student list page
+2026-10-19 16:04:06 INFO  [http-nio-8080-exec-9] c.c.s.s.impl.EnrollmentServiceImpl - Fetching enrolled summary overview records for page index: 0
+2026-10-19 16:04:06 WARN  [http-nio-8080-exec-9] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 16:04:08 INFO  [http-nio-8080-exec-3] c.c.s.controller.StudentController - Get /students/list - showing paginated student catalog list.
+2026-10-19 16:04:08 INFO  [http-nio-8080-exec-3] c.c.s.s.impl.StudentServiceImpl - Fetching paginated active students catalog from index: 0
+2026-10-19 16:04:10 INFO  [http-nio-8080-exec-2] c.c.s.controller.CourseController - Get /course/list - showing course list page.
+2026-10-19 16:04:10 INFO  [http-nio-8080-exec-2] c.c.s.service.impl.CourseServiceImpl - Fetching paginated active courses list from page index: 0
+2026-10-19 16:04:12 INFO  [http-nio-8080-exec-6] c.c.s.controller.DashboardController - Processing GET /dashboard - loading landing metrics view overview.
+2026-10-19 16:04:12 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.DashboardServiceImpl - Compiling central dashboard analytics statistics.
+2026-10-19 16:04:12 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.DashboardServiceImpl - Querying database to resolve the highest registered course title.
+2026-10-19 16:04:12 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.EnrollmentServiceImpl - Fetching top 5 recently enrolled students for dashboard.
+2026-10-19 16:04:12 WARN  [http-nio-8080-exec-6] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 16:04:34 INFO  [http-nio-8080-exec-7] c.c.s.c.EnrollmentController - Get /enrollments/showEnroll - showing enrollment page.
+2026-10-19 16:04:34 INFO  [http-nio-8080-exec-7] c.c.s.service.impl.CourseServiceImpl - Fetching all active courses sorted by courseName for dropdown inputs.
+2026-10-19 16:04:34 INFO  [http-nio-8080-exec-7] c.c.s.s.impl.StudentServiceImpl - Fetching raw active student records list for selection dropdown forms.
+2026-10-19 16:04:48 INFO  [http-nio-8080-exec-10] c.c.s.controller.StudentController - Get /students/list - showing paginated student catalog list.
+2026-10-19 16:04:48 INFO  [http-nio-8080-exec-10] c.c.s.s.impl.StudentServiceImpl - Fetching paginated active students catalog from index: 0
+2026-10-19 16:04:55 INFO  [http-nio-8080-exec-1] c.c.s.controller.DashboardController - Processing GET /dashboard - loading landing metrics view overview.
+2026-10-19 16:04:55 INFO  [http-nio-8080-exec-1] c.c.s.s.impl.DashboardServiceImpl - Compiling central dashboard analytics statistics.
+2026-10-19 16:04:55 INFO  [http-nio-8080-exec-1] c.c.s.s.impl.DashboardServiceImpl - Querying database to resolve the highest registered course title.
+2026-10-19 16:04:55 INFO  [http-nio-8080-exec-1] c.c.s.s.impl.EnrollmentServiceImpl - Fetching top 5 recently enrolled students for dashboard.
+2026-10-19 16:04:55 WARN  [http-nio-8080-exec-1] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 16:05:04 INFO  [http-nio-8080-exec-4] c.c.s.c.EnrollmentController - Get /enrollments/showEnroll - showing enrollment page.
+2026-10-19 16:05:04 INFO  [http-nio-8080-exec-4] c.c.s.service.impl.CourseServiceImpl - Fetching all active courses sorted by courseName for dropdown inputs.
+2026-10-19 16:05:04 INFO  [http-nio-8080-exec-4] c.c.s.s.impl.StudentServiceImpl - Fetching raw active student records list for selection dropdown forms.
+2026-10-19 16:05:12 INFO  [http-nio-8080-exec-5] c.c.s.controller.CourseController - Get /course/list - showing course list page.
+2026-10-19 16:05:12 INFO  [http-nio-8080-exec-5] c.c.s.service.impl.CourseServiceImpl - Fetching paginated active courses list from page index: 0
+2026-10-19 16:05:16 INFO  [http-nio-8080-exec-8] c.c.s.service.impl.CourseServiceImpl - Fetching course details for ID: 5
+2026-10-19 16:05:21 INFO  [http-nio-8080-exec-10] c.c.s.controller.CourseController - Get /course/list - showing course list page.
+2026-10-19 16:05:21 INFO  [http-nio-8080-exec-10] c.c.s.service.impl.CourseServiceImpl - Fetching paginated active courses list from page index: 0
+2026-10-19 16:06:00 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-19 16:06:00 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-19 16:06:00 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-19 16:06:00 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-19 16:06:00 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2026-10-19 16:07:27 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-10-19 16:07:27 INFO  [main] c.c.s.StudentmanagementApplication - Starting StudentmanagementApplication using Java 26.0.2 with PID 2884 (C:\Users\DELL\Downloads\student-management-system-springboot-fixed\student-management-system-springboot-main\studentmanagement\target\classes started by DELL in C:\Users\DELL\Downloads\student-management-system-springboot-fixed)
+2026-10-19 16:07:27 INFO  [main] c.c.s.StudentmanagementApplication - No active profile set, falling back to 1 default profile: "default"
+2026-10-19 16:07:29 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-19 16:07:29 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 115 ms. Found 4 JPA repository interfaces.
+2026-10-19 16:07:30 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-10-19 16:07:30 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-10-19 16:07:30 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-19 16:07:30 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-10-19 16:07:30 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-10-19 16:07:30 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2310 ms
+2026-10-19 16:07:30 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-10-19 16:07:30 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.4.Final
+2026-10-19 16:07:30 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-10-19 16:07:31 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-19 16:07:31 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-10-19 16:07:31 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@213835b6
+2026-10-19 16:07:31 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-10-19 16:07:31 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.46
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-19 16:07:32 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-19 16:07:33 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-19 16:07:34 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-19 16:07:34 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-10-19 16:07:34 INFO  [main] o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name userServiceImpl
+2026-10-19 16:07:35 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-10-19 16:07:35 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-10-19 16:07:35 INFO  [main] c.c.s.StudentmanagementApplication - Started StudentmanagementApplication in 8.613 seconds (process running for 9.401)
+2026-10-19 16:08:06 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-19 16:08:06 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-19 16:08:06 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-10-19 16:08:10 INFO  [http-nio-8080-exec-6] c.c.s.controller.DashboardController - Processing GET /dashboard - loading landing metrics view overview.
+2026-10-19 16:08:10 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.DashboardServiceImpl - Compiling central dashboard analytics statistics.
+2026-10-19 16:08:10 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.DashboardServiceImpl - Querying database to resolve the highest registered course title.
+2026-10-19 16:08:10 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.EnrollmentServiceImpl - Fetching top 5 recently enrolled students for dashboard.
+2026-10-19 16:08:10 WARN  [http-nio-8080-exec-6] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 16:08:15 INFO  [http-nio-8080-exec-8] c.c.s.controller.StudentController - Get /students/list - showing paginated student catalog list.
+2026-10-19 16:08:15 INFO  [http-nio-8080-exec-8] c.c.s.s.impl.StudentServiceImpl - Fetching paginated active students catalog from index: 0
+2026-10-19 16:08:18 INFO  [http-nio-8080-exec-10] c.c.s.controller.DashboardController - Processing GET /dashboard - loading landing metrics view overview.
+2026-10-19 16:08:18 INFO  [http-nio-8080-exec-10] c.c.s.s.impl.DashboardServiceImpl - Compiling central dashboard analytics statistics.
+2026-10-19 16:08:18 INFO  [http-nio-8080-exec-10] c.c.s.s.impl.DashboardServiceImpl - Querying database to resolve the highest registered course title.
+2026-10-19 16:08:18 INFO  [http-nio-8080-exec-10] c.c.s.s.impl.EnrollmentServiceImpl - Fetching top 5 recently enrolled students for dashboard.
+2026-10-19 16:08:18 WARN  [http-nio-8080-exec-10] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 16:08:20 INFO  [http-nio-8080-exec-2] c.c.s.controller.CourseController - Get /course/list - showing course list page.
+2026-10-19 16:08:20 INFO  [http-nio-8080-exec-2] c.c.s.service.impl.CourseServiceImpl - Fetching paginated active courses list from page index: 0
+2026-10-19 16:08:22 INFO  [http-nio-8080-exec-4] c.c.s.controller.CourseController - Get /course/new - showing create course page.
+2026-10-19 16:14:13 INFO  [http-nio-8080-exec-8] c.c.s.controller.CourseController - Post /course - create course request received.
+2026-10-19 16:14:13 INFO  [http-nio-8080-exec-8] c.c.s.service.impl.CourseServiceImpl - Checking if code exists: JA001
+2026-10-19 16:14:13 INFO  [http-nio-8080-exec-8] c.c.s.service.impl.CourseServiceImpl - Creating course with code: JA001
+2026-10-19 16:14:13 INFO  [http-nio-8080-exec-8] c.c.s.controller.CourseController - Post /course - create course successfully created.
+2026-10-19 16:14:13 INFO  [http-nio-8080-exec-9] c.c.s.controller.CourseController - Get /course/list - showing course list page.
+2026-10-19 16:14:13 INFO  [http-nio-8080-exec-9] c.c.s.service.impl.CourseServiceImpl - Fetching paginated active courses list from page index: 0
+2026-10-19 16:14:17 INFO  [http-nio-8080-exec-1] c.c.s.controller.StudentController - Get /students/list - showing paginated student catalog list.
+2026-10-19 16:14:17 INFO  [http-nio-8080-exec-1] c.c.s.s.impl.StudentServiceImpl - Fetching paginated active students catalog from index: 0
+2026-10-19 16:14:22 INFO  [http-nio-8080-exec-3] c.c.s.controller.StudentController - Get /students/new - showing create student form.
+2026-10-19 16:15:12 INFO  [http-nio-8080-exec-7] c.c.s.controller.StudentController - Post /students/save - processing request to save new student record.
+2026-10-19 16:15:12 ERROR [http-nio-8080-exec-7] c.c.s.controller.StudentController - Post /students/save - validation errors caught, reloading input view form.
+2026-10-19 16:15:14 INFO  [http-nio-8080-exec-9] c.c.s.controller.StudentController - Post /students/save - processing request to save new student record.
+2026-10-19 16:15:14 ERROR [http-nio-8080-exec-9] c.c.s.controller.StudentController - Post /students/save - validation errors caught, reloading input view form.
+2026-10-19 16:15:15 INFO  [http-nio-8080-exec-1] c.c.s.controller.StudentController - Post /students/save - processing request to save new student record.
+2026-10-19 16:15:15 ERROR [http-nio-8080-exec-1] c.c.s.controller.StudentController - Post /students/save - validation errors caught, reloading input view form.
+2026-10-19 16:15:32 INFO  [http-nio-8080-exec-3] c.c.s.controller.StudentController - Post /students/save - processing request to save new student record.
+2026-10-19 16:15:32 INFO  [http-nio-8080-exec-3] c.c.s.s.impl.StudentServiceImpl - Checking unique email registration state for: abhishek@gmail.com
+2026-10-19 16:15:32 INFO  [http-nio-8080-exec-3] c.c.s.s.impl.StudentServiceImpl - Processing persistence storage mapping for new student registration record.
+2026-10-19 16:15:32 INFO  [http-nio-8080-exec-3] c.c.s.controller.StudentController - Post /students/save - entity persistent operation completed successfully.
+2026-10-19 16:15:32 INFO  [http-nio-8080-exec-4] c.c.s.controller.StudentController - Get /students/list - showing paginated student catalog list.
+2026-10-19 16:15:32 INFO  [http-nio-8080-exec-4] c.c.s.s.impl.StudentServiceImpl - Fetching paginated active students catalog from index: 0
+2026-10-19 16:15:36 INFO  [http-nio-8080-exec-6] c.c.s.controller.DashboardController - Processing GET /dashboard - loading landing metrics view overview.
+2026-10-19 16:15:36 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.DashboardServiceImpl - Compiling central dashboard analytics statistics.
+2026-10-19 16:15:36 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.DashboardServiceImpl - Querying database to resolve the highest registered course title.
+2026-10-19 16:15:36 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.EnrollmentServiceImpl - Fetching top 5 recently enrolled students for dashboard.
+2026-10-19 16:15:36 WARN  [http-nio-8080-exec-6] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 16:15:44 INFO  [http-nio-8080-exec-8] c.c.s.c.EnrollmentController - Get /enrollmentList - showing enrolled student list page
+2026-10-19 16:15:44 INFO  [http-nio-8080-exec-8] c.c.s.s.impl.EnrollmentServiceImpl - Fetching enrolled summary overview records for page index: 0
+2026-10-19 16:15:44 WARN  [http-nio-8080-exec-8] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 16:15:46 INFO  [http-nio-8080-exec-10] c.c.s.c.EnrollmentController - Get /enrollments/showEnroll - showing enrollment page.
+2026-10-19 16:15:46 INFO  [http-nio-8080-exec-10] c.c.s.service.impl.CourseServiceImpl - Fetching all active courses sorted by courseName for dropdown inputs.
+2026-10-19 16:15:46 INFO  [http-nio-8080-exec-10] c.c.s.s.impl.StudentServiceImpl - Fetching raw active student records list for selection dropdown forms.
+2026-10-19 16:16:00 INFO  [http-nio-8080-exec-2] c.c.s.c.EnrollmentController - Post /enrollments/enrollCourse - enrollment request received.
+2026-10-19 16:16:00 INFO  [http-nio-8080-exec-2] c.c.s.s.impl.EnrollmentServiceImpl - Processing multiple course enrollment request for Student ID: 1
+2026-10-19 16:16:00 INFO  [http-nio-8080-exec-2] c.c.s.c.EnrollmentController - Post /enrollments/enrollCourse - Enrollment successfully.
+2026-10-19 16:16:00 INFO  [http-nio-8080-exec-3] c.c.s.c.EnrollmentController - Get /enrollmentList - showing enrolled student list page
+2026-10-19 16:16:00 INFO  [http-nio-8080-exec-3] c.c.s.s.impl.EnrollmentServiceImpl - Fetching enrolled summary overview records for page index: 0
+2026-10-19 16:16:01 WARN  [http-nio-8080-exec-3] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 16:16:03 INFO  [http-nio-8080-exec-5] c.c.s.controller.DashboardController - Processing GET /dashboard - loading landing metrics view overview.
+2026-10-19 16:16:03 INFO  [http-nio-8080-exec-5] c.c.s.s.impl.DashboardServiceImpl - Compiling central dashboard analytics statistics.
+2026-10-19 16:16:03 INFO  [http-nio-8080-exec-5] c.c.s.s.impl.DashboardServiceImpl - Querying database to resolve the highest registered course title.
+2026-10-19 16:16:03 INFO  [http-nio-8080-exec-5] c.c.s.s.impl.EnrollmentServiceImpl - Fetching top 5 recently enrolled students for dashboard.
+2026-10-19 16:16:03 WARN  [http-nio-8080-exec-5] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 16:16:18 INFO  [http-nio-8080-exec-8] c.c.s.s.impl.EnrollmentServiceImpl - Compiling detailed relational records tree for Student ID: 1
+2026-10-19 16:16:28 INFO  [http-nio-8080-exec-10] c.c.s.controller.DashboardController - Processing GET /dashboard - loading landing metrics view overview.
+2026-10-19 16:16:28 INFO  [http-nio-8080-exec-10] c.c.s.s.impl.DashboardServiceImpl - Compiling central dashboard analytics statistics.
+2026-10-19 16:16:28 INFO  [http-nio-8080-exec-10] c.c.s.s.impl.DashboardServiceImpl - Querying database to resolve the highest registered course title.
+2026-10-19 16:16:28 INFO  [http-nio-8080-exec-10] c.c.s.s.impl.EnrollmentServiceImpl - Fetching top 5 recently enrolled students for dashboard.
+2026-10-19 16:16:28 WARN  [http-nio-8080-exec-10] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 16:16:36 INFO  [http-nio-8080-exec-2] c.c.s.c.EnrollmentController - Get /enrollmentList - showing enrolled student list page
+2026-10-19 16:16:36 INFO  [http-nio-8080-exec-2] c.c.s.s.impl.EnrollmentServiceImpl - Fetching enrolled summary overview records for page index: 0
+2026-10-19 16:16:36 WARN  [http-nio-8080-exec-2] org.hibernate.orm.query - HHH90003004: firstResult/maxResults specified with collection fetch; applying in memory
+2026-10-19 16:16:39 INFO  [http-nio-8080-exec-4] c.c.s.c.EnrollmentController - Get /enrollments/showEnroll - showing enrollment page.
+2026-10-19 16:16:39 INFO  [http-nio-8080-exec-4] c.c.s.service.impl.CourseServiceImpl - Fetching all active courses sorted by courseName for dropdown inputs.
+2026-10-19 16:16:39 INFO  [http-nio-8080-exec-4] c.c.s.s.impl.StudentServiceImpl - Fetching raw active student records list for selection dropdown forms.
+2026-10-19 16:16:46 INFO  [http-nio-8080-exec-6] c.c.s.c.EnrollmentController - Get /enrollments/showEnroll - showing enrollment page.
+2026-10-19 16:16:46 INFO  [http-nio-8080-exec-6] c.c.s.service.impl.CourseServiceImpl - Fetching all active courses sorted by courseName for dropdown inputs.
+2026-10-19 16:16:46 INFO  [http-nio-8080-exec-6] c.c.s.s.impl.StudentServiceImpl - Fetching raw active student records list for selection dropdown forms.
+2026-10-19 16:17:07 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-19 16:17:07 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-19 16:17:07 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-19 16:17:07 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-10-19 16:17:07 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
